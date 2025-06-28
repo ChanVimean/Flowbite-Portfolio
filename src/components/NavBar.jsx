@@ -1,3 +1,11 @@
+const navMenu = [
+  { nav: "Home", link: "#" },
+  { nav: "Skills", link: "#" },
+  { nav: "About", link: "#" },
+  { nav: "Projects", link: "#" },
+  { nav: "Contact", link: "#" },
+];
+
 const NavBar = () => {
   return (
     <div className="bg-white border-gray-200 dark:bg-gray-900">
@@ -44,38 +52,16 @@ const NavBar = () => {
               </span>
             </div>
             <ul className="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Earnings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Sign out
-                </a>
-              </li>
+              {navMenu.map((menu, index) => (
+                <li key={index}>
+                  <a
+                    href={menu.link}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >
+                    {menu.nav}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <button
